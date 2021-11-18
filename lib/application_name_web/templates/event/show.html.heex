@@ -1,0 +1,25 @@
+<h1> The Events </h1>
+
+<ul>
+    <li>
+        <strong></strong>
+        <%= @event.title %>
+    </li>
+    <li>
+        <strong></strong>
+        <%= @event.location %>
+    </li>
+
+    <li>
+        <strong></strong>
+        <%= @event.date %>
+    </li>
+
+    <li>
+        <strong></strong>
+        <%= @event.discription %>
+    </li>
+</ul>
+
+<span><%= link "Edit Event", to: Routes.event_path(@conn, :edit, @event)%> </span>
+<span> <%= link "Back", to: Routes.event_path(@conn, :index)%></span>

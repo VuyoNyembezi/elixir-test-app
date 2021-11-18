@@ -1,0 +1,32 @@
+<h1> Events List </h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Description</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <%= for event <- @events do%>
+        <tr>
+            <td><%=event.title%></td>
+            <td><%=event.location%></td>
+            <td><%=event.date%></td>
+            <td><%=event.discription%></td>
+            
+            <td>
+            <span><%= link "Show Event ", to: Routes.event_path(@conn, :show, event) %> </span>
+            <span><%= link "Edit Event ", to: Routes.event_path(@conn, :edit, event)%> </span>
+            <span><%= link "Delete Event", to: Routes.event_path(@conn, :delete, event)%> </span>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<span><%= link "New Event", to: Routes.event_path(@conn, :new) %>  </span>
